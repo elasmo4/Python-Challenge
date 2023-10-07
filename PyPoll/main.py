@@ -8,22 +8,19 @@ file = csv.DictReader(open('Resources/election_data.csv'))
 
 #initialize votes
 votes = 0
-#empty dictionary for file contents
 candidate_dict = {}
-#store winner value
 winner = 0
-#string for winner's name
 winner_name = ""
 
 #iterate through each row in file
 for row in file:
-    #total votes
+    #counting votes
     votes += 1
 
-    #store candidates in file to variable "candidate"
+    #store candidates to variable "candidate"
     candidate = row['Candidate']
 
-    #if candidate's name is not already in the dictionary then
+    #candidate's name appears once in dictionary
     if candidate not in candidate_dict.keys():
         #initialize count for each candidate
         candidate_dict[candidate] = 0
